@@ -8,25 +8,129 @@
   background-size: cover;
 }
 body {
-  max-width: 1440px;
   margin: 0 auto;
   background-color: rgb(23, 23, 23);
+  font-size: 14px;
+  /*min-width: 1100px;
+*/
+}
 
+.wrapper {
+  background-color: #000;
+  position: relative;
+  color: white;
+  text-align: center;
+  height: 40px;
+  font-family: "Arial";
+  display: none;
+  border-radius: 10px;
+}
+
+#check-menu {
+  display: none;
+}
+
+.label-checkmenu {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+  line-height: 40px;
+}
+
+.burger-line {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.5s all;
+}
+
+.second,
+.third {
+  top: 18px;
+}
+
+.fourth {
+  top: 28px;
+}
+
+.main-menu {
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  max-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  transition: 0.5s all;
+}
+
+.main-menu a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: rgb(209, 205, 205);
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: #000;
+}
+
+#check-menu:checked ~ .main-menu {
+  max-height: 500px;
+  font-size: 16px;
+}
+
+#check-menu:checked ~ .first {
+  display: none;
+}
+
+#check-menu:checked ~ .second {
+  transform: rotate(45deg);
+}
+
+#check-menu:checked ~ .third {
+  transform: rotate(-45deg);
+}
+
+#check-menu:checked ~ .fourth {
+  display: none;
+}
+
+.container {
+  padding: 15px;
 }
 
 .header {
   display: flex;
-  /*justify-content: center;*/
   justify-content: space-between;
   align-items: center;
 }
 
 .moonlogo img {
-  height: 110px;
+  height: 40px;
+  margin: 10px;
+}
+
+.moonlogo2 img {
+  height: 30px;
+  margin-top: 5px;
+  margin-left: 5px;
+  float: left;
 }
 
 .menu {
+  margin: 0;
   display: flex;
+  width: 100%;
   justify-content: center;
 }
 
@@ -39,11 +143,12 @@ body {
   text-decoration: none;
   color: rgb(209, 205, 205);
   position: relative;
+  padding: 5px;
 }
 
 .menu a:hover {
   background-color: rgb(92, 91, 91);
-  border-radius: 7px;
+  border-radius: 15px;
 }
 
 .language a {
@@ -67,16 +172,15 @@ body {
 }
 
 .phmoon {
-  height: 315px;
-  width: 40%;
+  width: 100%;
+  max-width: 600px;
   border-radius: 10px;
 }
 .title {
   color: rgb(231, 221, 221);
   position: absolute;
-  /*font-size: 58px;*/
   font-size: calc(30px + 28 * (100vw / 1280));
-  width: 60%;
+  width: 55%;
   text-align: center;
   text-shadow: 1px 1px 1px #000;
 }
@@ -92,7 +196,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  width: 90%;
+  width: 100%;
   padding: 10px;
   border-radius: 10px;
   display: flex;
@@ -105,8 +209,15 @@ body {
   background-color: rgb(45, 45, 45);
   border: 1px solid rgb(148, 146, 146);
   border-radius: 5px;
-  width: 90%;
+  width: 100%;
   height: 25px;
+}
+
+#there {
+  width: 100%;
+}
+#back {
+  width: 100%;
 }
 
 .srhcont label {
@@ -145,23 +256,14 @@ body {
 
 .placep {
   color: rgb(148, 146, 146);
-  font-size: 13px;
   margin-bottom: 0;
-
 }
 
 .station {
   color: rgb(236, 232, 232);
   font-size: 35px;
   width: 67%;
-  margin: 0;
-}
-
-.fullmoon {
-  width: 50%;
-}
-.fullmoon img {
-  height: 510px;
+  margin: 20px 0;
 }
 
 .appolo {
@@ -190,163 +292,29 @@ body {
 
 .why-cont {
   display: flex;
-  padding: 20px;
-}
-
-.whyshould {
-  width: 45%;
-  height: 120px;
+  width: 50%;
   color: rgb(236, 232, 232);
-  /*font-size: 70px; */
   font-size: calc(30px + 40 * (100vw / 1280));
-  padding: 25px;
 }
 
 .buttons-cont {
   display: flex;
   padding: 20px;
-  height: 220px;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
 }
 
-.btn1 {
-  font-size: 18px;
+.btn {
+  font-size: 30px;
   background-color: rgb(28, 28, 28);
   border: 1px solid rgb(148, 146, 146);
-  border-radius: 8px;
+  border-radius: 15px;
   color: rgb(224, 222, 222);
-  width: 25%;
-  height: 40px;
+  margin: 20px;
+  padding: 25px;
 }
 
-.btn1:hover {
-  background-color: rgb(101, 91, 214);
-}
-
-.btn2 {
-  font-size: 18px;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(148, 146, 146);
-  border-radius: 8px;
-  color: rgb(224, 222, 222);
-  width: 30%;
-  height: 40px;
-}
-
-.btn2:hover {
-  background-color: rgb(101, 91, 214);
-}
-
-.btn3 {
-  font-size: 18px;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(148, 146, 146);
-  border-radius: 8px;
-  color: rgb(224, 222, 222);
-  width: 15%;
-  height: 40px;
-}
-
-.btn3:hover {
-  background-color: rgb(101, 91, 214);
-}
-
-.btn4 {
-  font-size: 18px;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(148, 146, 146);
-  border-radius: 8px;
-  color: rgb(224, 222, 222);
-  width: 18%;
-  height: 40px;
-}
-
-.btn4:hover {
-  background-color: rgb(101, 91, 214);
-}
-
-.btn5 {
-  font-size: 18px;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(148, 146, 146);
-  border-radius: 8px;
-  color: rgb(224, 222, 222);
-  width: 33%;
-  height: 40px;
-}
-
-.btn5:hover {
-  background-color: rgb(101, 91, 214);
-}
-
-.btn6 {
-  font-size: 18px;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(148, 146, 146);
-  border-radius: 8px;
-  color: rgb(224, 222, 222);
-  width: 28%;
-  height: 40px;
-}
-
-.btn6:hover {
-  background-color: rgb(101, 91, 214);
-}
-
-.btn7 {
-  font-size: 18px;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(148, 146, 146);
-  border-radius: 8px;
-  color: rgb(224, 222, 222);
-  width: 32%;
-  height: 40px;
-}
-
-.btn7:hover {
-  background-color: rgb(101, 91, 214);
-}
-
-.btn8 {
-  font-size: 18px;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(148, 146, 146);
-  border-radius: 8px;
-  color: rgb(224, 222, 222);
-  width: 25%;
-  height: 40px;
-}
-
-.btn8:hover {
-  background-color: rgb(101, 91, 214);
-}
-
-.btn9 {
-  font-size: 18px;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(148, 146, 146);
-  border-radius: 8px;
-  color: rgb(224, 222, 222);
-  width: 23%;
-  height: 40px;
-}
-
-.btn9:hover {
-  background-color: rgb(101, 91, 214);
-}
-
-.btn10 {
-  font-size: 18px;
-  background-color: rgb(28, 28, 28);
-  border: 1px solid rgb(148, 146, 146);
-  border-radius: 8px;
-  color: rgb(224, 222, 222);
-  width: 30%;
-  height: 40px;
-}
-
-.btn10:hover {
+.btn:hover {
   background-color: rgb(101, 91, 214);
 }
 
@@ -382,7 +350,6 @@ body {
 }
 
 .desctext {
-  font-size: 14px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -416,7 +383,6 @@ body {
 }
 
 .titleft {
-  font-size: 15px;
   color: rgb(236, 232, 232);
   margin-bottom: 0;
 }
@@ -436,4 +402,155 @@ body {
 }
 input {
   color: rgb(148, 146, 146);
+}
+
+.fullmoon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fullmoon img {
+  width: 100%;
+}
+
+@media all and (max-width: 912px) {
+  .wrapper {
+    display: block;
+    z-index: 100;
+    margin-bottom: 15px;
+  }
+  .srhtickets form div {
+    width: 100%;
+    display: inline-block;
+  }
+  input {
+    display: block;
+  }
+  .station {
+    width: 100%;
+  }
+  .header {
+    display: none;
+  }
+  .fullmoon img {
+    max-width: 50%;
+  }
+  .srhtickets {
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .descimg {
+    height: auto;
+    width: 100%;
+  }
+  .why-cont {
+    width: 100%;
+  }
+  .buttons-cont {
+    height: auto;
+  }
+  .btn {
+    width: 100%;
+    height: auto;
+  }
+  .spaceship {
+    margin: 0px;
+  }
+  .why-cont {
+    width: 100%;
+  }
+
+  .title {
+    width: 70%;
+  }
+
+  .srhcont {
+    height: 400px;
+    width: 100%;
+    flex-direction: column;
+    padding: 30px;
+  }
+  .findtkt {
+    width: 50%;
+    font-size: 18px;
+    margin-top: 0;
+  }
+
+  .ordertkt {
+    width: 50%;
+    font-size: 18px;
+  }
+  .appolo {
+    width: 95%;
+  }
+  .infomoon {
+    padding: 0px;
+  }
+  .sscont {
+    padding: 10px;
+  }
+  .infomoon {
+    flex-direction: column;
+  }
+  .description {
+    flex-direction: column;
+  }
+  .card {
+    width: auto;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footleft {
+    align-items: center;
+  }
+  .card {
+    margin: 40px;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .card {
+    margin: 30px;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .spaceship img {
+    width: 90%;
+    float: right;
+  }
+  .title {
+    width: 90%;
+  }
+  .card {
+    margin: 15px;
+  }
+  .findtkt {
+    width: 70%;
+    font-size: 17px;
+  }
+}
+
+@media all and (max-width: 294px) {
+  .ordertkt {
+    font-size: 16px;
+  }
+  .card {
+    margin: 5px;
+  }
+}
+
+@media all and (max-width: 280px) {
+  .ordertkt {
+    width: 60%;
+  }
+}
+
+@media all and (max-width: 263px) {
+  .title {
+    font-size: 30px;
+  }
 }
